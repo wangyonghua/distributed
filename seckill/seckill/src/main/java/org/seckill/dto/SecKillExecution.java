@@ -1,6 +1,7 @@
 package org.seckill.dto;
 
 import org.seckill.entity.SuccessKilled;
+import org.seckill.service.SecKillStatEnum;
 
 public class SecKillExecution {
 
@@ -29,6 +30,9 @@ public class SecKillExecution {
         this.secKillId = secKillId;
         this.state = state;
         this.stateInfo = stateInfo;
+    }
+
+    public SecKillExecution(Long secKillId, SecKillStatEnum repeat) {
     }
 
     public long getSecKillId() {
