@@ -21,7 +21,7 @@ public class TestController {
     @GetMapping("/")
     public void index(HttpServletResponse response) throws IOException {
         Jedis jedis = jedisPool.getResource();
-        String token = RedisRateLimiter.acquireTokenFromBucket(jedis, 20, 5000);
+        String token = RedisRateLimiter.acquireTokenFromBucket(jedis, 20, 1000);
         if (token == null) {
             response.sendError(500);
         } else {
